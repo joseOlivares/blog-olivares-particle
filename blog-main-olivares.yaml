@@ -1,0 +1,135 @@
+name: BlogMainEntries-Olivares
+description: Particle to show 2 articles (Blog entries), by Jose Luis Olivares (https://sv.linkedin.com/in/jolivaress). 
+type: particle
+icon: fa fa-rss
+
+configuration:
+  caching:
+    type: static
+
+form:
+  fields:
+    enabled:
+      type: input.checkbox
+      label: Enabled
+      description: Globally enable particles.
+      default: true
+
+    css.class:
+      type: input.selectize
+      label: CSS Classes
+      description: CSS class name for the particle.
+      default: center
+
+    title:
+      type: input.text
+      label: Title
+      description: Customize the title text.
+      placeholder: Enter title 
+
+    titlehx:      
+      type:  select.select
+      label: Title Header Size
+      description: Select the <h> size
+      placeholder: 'Select...'
+      default: h1
+      options:
+          h1: Header 1
+          h2: Header 2
+          h3: Header 3
+
+    title_css:
+      type: input.selectize
+      label: Title CSS Classes
+      description: Customize the title CSS Classes.
+
+    article.filter.categories:
+      type: joomla.categories
+      label: Categories
+      description: Select the categories the articles should be taken from.
+      overridable: false      
+
+    article.filter.articles:
+      type: input.text
+      label: Articles
+      description: Enter the Joomla articles that should be shown. It should be a list of article IDs separated with a comma (i.e. 1,2,3,4,5).
+      overridable: false
+
+    article.default_cardbody:
+      type: input.text
+      label: Articles default text content
+      description: Default text to show as articles content. (optional)
+      default: Read More...
+
+    cardcount:      
+      type:  select.select
+      label: Card Items to show 
+      description: Select the number of card items to show per row
+      placeholder: 'Select...'
+      default: 2
+      options:
+          2: 2 cards
+          3: 3 cards
+          4: 4 cards
+
+    cardbodypadding:
+      type: select.select
+      label: Card body padding
+      description: Select padding.
+      placeholder: 'Select...'
+      default: default
+      options:
+          default: default
+          uk-padding-remove: no padding all
+          uk-padding-remove-horizontal: remove horizontal
+          uk-padding-remove-vertical: remove vertical  
+          uk-padding-small: Small
+
+    cardtype:
+      type: select.select
+      label: Card Style
+      description: Select the card style.
+      placeholder: 'Select...'
+      default: default
+      options:
+        default: Default
+        primary: Primary
+        secondary: Secondary             
+
+    blogbuttontext:
+      type: input.text
+      label: Blog Button Text
+      description: Customize the text to show inside button blog.
+      placeholder: Enter text
+      default: My Blog 
+
+    blogbuttontype:
+      type: select.select
+      label: Button Type
+      description: Select the blog button type.
+      placeholder: 'Select...'
+      default: default
+      options:
+          uk-button-default: default
+          uk-button-primary: primary
+          uk-button-secondary: secondary
+          uk-button-danger: danger  
+          uk-button-text: text
+          uk-button-link: link       
+
+    bloglink:
+      type: input.text 
+      label: Blog Link
+      default: '#'  
+
+    blogtarget:
+      type: select.select
+      label: Blog Link target
+      description: Target browser window when the blog button is clicked.
+      placeholder: 'Select...'
+      default: _parent
+      options:
+          _parent: Self
+          _blank: New Window 
+
+ 
