@@ -1,10 +1,10 @@
 {% extends '@nucleus/partials/particle.html.twig' %}
- 
+
 
     {% set article_settings = particle.article %}
     {% set filter = article_settings.filter %}
     {% set default_cardbody=article_settings.default_cardbody %}
-    
+
     {# Category Finder #}
     {% set category_options = filter.categories ? {id: [filter.categories|split(','), 0]} : {} %}
     {% set categories = joomla.finder('category', category_options).published(1).language().limit(0).find() %}
@@ -15,7 +15,7 @@
     {% else %}
         {% set article_finder = joomla.finder('content').category(categories).published(1).language() %}
     {% endif %}
-    
+
     {% set total = article_finder.count() %}
     {% set articles = article_finder.find() %}
 
@@ -27,14 +27,14 @@
                 <{{ particle.titlehx|raw }} class="g-title">{{ particle.title|raw }}</{{ particle.titlehx|raw }}>
             </div>
         </div>
-    {% endif %}    
+    {% endif %}
     <div class="uk-child-width-1-{{particle.cardcount|default('2')}}@m uk-grid-match uk-grid" uk-grid>
         {% for article in articles  %}
             <div>
                 <div class="uk-card uk-card-{{particle.cardtype|default('default')}} uk-grid-collapse uk-child-width-1-2@s uk-margin" uk-grid>
                     <div class="uk-card-media-left uk-cover-container">
-                        <img src="{{ url(article.images.image_intro) }}" {{ article.images.image_intro|imagesize|raw }} class="uk-border-rounded" alt="{{ article.images.image_intro_alt }}" uk-cover/>   
-                        <canvas width="1000" height="650"></canvas>         
+                        <img src="{{ url(article.images.image_intro) }}" {{ article.images.image_intro|imagesize|raw }} class="uk-border-rounded" alt="{{ article.images.image_intro_alt }}" uk-cover/>
+                        <canvas width="1000" height="650"></canvas>
                     </div>
                     <div class="uk-card-body {{particle.cardbodypadding|e}}">
                         <h3 class="uk-card-title uk-margin-remove-bottom">
@@ -42,28 +42,27 @@
                         </h3>
                         <p class="uk-text-meta uk-margin-remove-top">by {{ article.created_by_alias|e }}, {{ article.date|e }}</p>
                         <p class="uk-text-small">
-                            <a target="{{ particle.blogtarget|default('_parent')|default('_parent')|e }}" href="{{ article.route }}" class="uk-link-reset">                                
+                            <a target="{{ particle.blogtarget|default('_parent')|default('_parent')|e }}" href="{{ article.route }}" class="uk-link-reset">
                                 {% if default_cardbody %}
                                     {{default_cardbody}}
-                                {% endif %}  
-                            </a> 
+                                {% endif %}
+                            </a>
                         </p>
-                    </div>  
+                    </div>
                 </div>
             </div>
-        {% endfor %}    
+        {% endfor %}
     </div>
       <div class="uk-margin-medium-top" id="jlblogbutton">
         <a class="uk-button {{ particle.blogbuttontype|e }}" href="{{ particle.bloglink|e }}" target="{{ particle.blogtarget|e }}" >{{ particle.blogbuttontext|raw }}</a>
      </div>
-     {# 
+     {# this is for testing
      {% for article in articles %}
         <h1>{{article.title}}</h1>
         <!-- <p>{{ article.fulltext|raw }}</p> -->
-        <!-- <p>{{ article.introtext|raw }}</p> -->   
-        <img src="{{ url(article.images.image_intro) }}" {{ article.images.image_intro|imagesize|raw }} class="uk-border-rounded" alt="{{ article.images.image_intro_alt }}" uk-cover/>    
+        <!-- <p>{{ article.introtext|raw }}</p> -->
+        <img src="{{ url(article.images.image_intro) }}" {{ article.images.image_intro|imagesize|raw }} class="uk-border-rounded" alt="{{ article.images.image_intro_alt }}" uk-cover/>
      {% endfor %}
     #}
 </div>
 {% endblock %}
-     
