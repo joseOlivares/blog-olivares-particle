@@ -31,13 +31,14 @@
     <div class="uk-child-width-1-{{particle.cardcount|default('2')}}@m uk-grid-match uk-grid" uk-grid>
         {% for article in articles  %}
             <div>
-                <a target="{{ particle.blogtarget|default('_parent') }}" href="{{ article.route }}" class="uk-link-reset">
                 <div class="uk-card uk-card-{{particle.cardtype|default('default')}} uk-grid-collapse uk-child-width-1-2@s uk-margin" uk-grid>                    
-                    <div class="uk-card-media-left uk-cover-container">                                                
-                        <img src="{{ url(article.images.image_intro) }}" {{ article.images.image_intro|imagesize|raw }} class="uk-border-rounded" alt="{{ article.images.image_intro_alt }}" uk-cover/>
-                        <canvas width="1000" height="650"></canvas>    
+                    <div class="uk-card-media-left uk-cover-container">
+                        <a target="{{ particle.blogtarget|default('_parent') }}" href="{{ article.route }}" class="uk-link-reset">                                                
+                            <canvas width="1050" height="650"></canvas>
+                            <img src="{{ url(article.images.image_intro) }}" {{ article.images.image_intro|imagesize|raw }} class="uk-border-rounded" alt="{{ article.images.image_intro_alt }}" uk-cover/>                           
+                        </a>    
                     </div>
-                    <div class="uk-card-body {{particle.cardbodypadding|e}}">
+                    <div class="uk-card-body {{particle.cardbodypadding|e}} uk-padding-remove-vertical uk-margin">
                         <h3 class="uk-card-title uk-margin-remove-bottom">
                             <a target="{{ particle.blogtarget|default('_parent') }}" href="{{ article.route }}" class="uk-button uk-button-text">{{article.title|e}}</a>
                         </h3>
@@ -50,8 +51,7 @@
                             </a>
                         </p>
                     </div>
-                </div>
-                </a>
+                </div>  
             </div>
         {% endfor %}
     </div>
