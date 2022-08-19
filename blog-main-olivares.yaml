@@ -78,7 +78,7 @@ form:
       label: Card body padding
       description: Select padding.
       placeholder: 'Select...'
-      default: default
+      default: uk-padding-remove-horizontal
       options:
           default: default
           uk-padding-remove: no padding all
