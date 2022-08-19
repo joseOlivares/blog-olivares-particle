@@ -24,13 +24,13 @@ You can see an example implemented in this website I made (https://iconnsv.com) 
 # Some Screenshots
 
 ## Particle on Gantry 5.3.2+
-![gantry5-particle]( ./no-copy-imgs/agregar-particle.jpg?raw=true "Add particle")
+![gantry5-particle]( ./no-copy-imgs/particle-img1.jpg?raw=true "Add particle")
 
-## Chosing between uk-card mode or no-card presentation
-![presentation-mode](./no-copy-imgs/presentacion.jpg?raw=true "Presentation")
+## Defining articles ID's to show
+![presentation-mode](./no-copy-imgs/particle-img2.jpg?raw=true "Articles IDs to show")
 
-## Uk-card presentation 
-![card-mode]( ./no-copy-imgs/card-mode.jpg?raw=true "Card mode")
+## How many cards to show (from 2 to 4)
+![card-mode]( ./no-copy-imgs/particle-img3.jpg?raw=true "How many cards")
 
-## No card presentation (apliying custom uikit classes to the div container)
-![nocard-mode]( ./no-copy-imgs/nocard-mode.jpg?raw=true "No-card mode")
+## Real example
+![nocard-mode]( ./no-copy-imgs/particle-img4.jpg?raw=true "PArticle implemented")
