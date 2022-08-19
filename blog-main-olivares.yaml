@@ -80,11 +80,12 @@ form:
       placeholder: 'Select...'
       default: uk-padding-remove-horizontal
       options:
-          default: default
+          uk-padding: default
           uk-padding-remove: no padding all
           uk-padding-remove-horizontal: remove horizontal
           uk-padding-remove-vertical: remove vertical  
           uk-padding-small: Small
+          uk-padding-large: Large
 
     cardtype:
       type: select.select
