@@ -2,7 +2,7 @@ name: BlogMainEntries-Olivares
 description: Particle to show 2 articles (Blog entries), by Jose Luis Olivares. You can say thanks endorsing my skills on https://www.linkedin.com/in/jolivaress/.
             - and/or making a voluntary donation through Paypal https://paypal.me/joolivares     
 type: particle
-icon: fa fa-rss
+icon: far fa-blog
 
 configuration:
   caching:
