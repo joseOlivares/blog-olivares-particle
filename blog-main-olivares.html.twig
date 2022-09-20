@@ -1,5 +1,5 @@
 {# Blog presentation cards for articles   by José Luis Olivares. 
-You can say thanks endorsing my skills on https://www.linkedin.com/in/jolivaress/.
+You can say thanks endorsing my dev skills on https://www.linkedin.com/in/jolivaress/.
 and/or  making a voluntary donation through Paypal https://paypal.me/joolivares #}
 
 {% extends '@nucleus/partials/particle.html.twig' %}
@@ -23,6 +23,17 @@ and/or  making a voluntary donation through Paypal https://paypal.me/joolivares 
 
 {% block particle %}
 <div class="uk-container uk-text-center">
+
+   {# <script>console.log({{ _context | json_encode | raw }});
+        console.log("---------articles[1]------");
+        console.log({{ articles[1] | json_encode | raw }});
+        console.log("---------articles[1].route------");
+        console.log({{ articles[1].route| json_encode | raw }});
+        console.log("---------Categories------");
+        console.log({{ categories[19].route| json_encode | raw }});
+
+    </script>  #}
+
     {% if particle.title %}
         <div class="g-grid">
             <div class="g-block size-100 {{ particle.title_css }}">
@@ -32,6 +43,10 @@ and/or  making a voluntary donation through Paypal https://paypal.me/joolivares 
     {% endif %}
     <div class="uk-child-width-1-{{particle.cardcount|default('2')}}@m uk-grid-match uk-grid" uk-grid>
         {% for article in articles  %}
+           {#  <script>
+                console.log("---------article content------");
+                console.log({{ article.route | json_encode | raw }});
+             </script> #}
             <div>
                 <div class="uk-card uk-card-{{particle.cardtype|default('default')}} uk-grid-collapse uk-child-width-1-2@s uk-margin" uk-grid>                    
                     <div class="uk-card-media-left uk-cover-container">
@@ -46,7 +61,7 @@ and/or  making a voluntary donation through Paypal https://paypal.me/joolivares 
                         </h3>
                         <p class="uk-text-meta uk-margin-remove-top">by {{ article.created_by_alias|e }}, {{ article.date|e }}</p>
                         <p class="uk-text-small">
-                            <a target="{{ particle.blogtarget|default('_parent')|default('_parent')|e }}" href="{{ article.route }}" class="uk-link-reset">
+                            <a target="{{ particle.blogtarget|default('_parent')|default('_parent')|e }}" href="{{ article.route | url }}" class="uk-link-reset">
                                 {% if default_cardbody %}
                                     {{default_cardbody}}
                                 {% endif %}
